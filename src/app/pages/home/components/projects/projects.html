@@ -1,1 +1,42 @@
-<p>projects works!</p>
+<section class="projects-container">
+  <h2>Meus Projetos</h2>
+  
+  <div class="grid-layout">
+    <mat-card class="project-card" *ngFor="let project of projects">
+      <mat-card-header>
+        <mat-card-title>{{ project.title }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>{{ project.description }}</p>
+
+        <mat-chip-set class="tech-chips">
+          <mat-chip *ngFor="let tech of project.technologies">{{ tech }}</mat-chip>
+        </mat-chip-set>
+      </mat-card-content>
+
+      <mat-card-actions allign="end" class="actions-container">
+        
+        <a mat-stroked-button class="repo-btn" *ngIf="project.frontendLink" [href]="project.frontendLink" target="_blank">
+          <mat-icon>code</mat-icon> Front-End
+        </a>
+
+        <a mat-stroked-button class="repo-btn" *ngIf="project.backendLink" [href]="project.backendLink" target="_blank">
+          <mat-icon>data_object</mat-icon> Back-End
+        </a>
+
+        <a mat-stroked-button class="repo-btn" *ngIf="project.repoLink" [href]="project.repoLink" target="_blank">
+          <mat-icon>code</mat-icon> GitHub
+        </a>
+
+        <a mat-raised-button class="deploy-btn" *ngIf="project.deployLink" [href]="project.deployLink" target="_blank">
+          <mat-icon>rocket_launch</mat-icon> Online
+        </a>
+
+        <span class="private-badge" *ngIf="!project.repoLink && !project.frontendLink && !project.deployLink">
+          Projeto Corporativo (Confidencial)
+        </span>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>

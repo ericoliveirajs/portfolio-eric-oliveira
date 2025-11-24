@@ -1,1 +1,27 @@
-<p>contact works!</p>
+<footer class="contact-container">
+  <div class="content">
+    <h2>Vamos Trabalhar Juntos?</h2>
+    <p>Estou disponível para novos desafios e oportunidades. Sinta-se à vontade para entrar em contato!</p>
+    
+    <div class="action-buttons">
+      <button mat-raised-button color="accent" (click)="sendEmail()">
+        <mat-icon>email</mat-icon>
+        Enviar E-mail
+      </button>
+
+      <button mat-stroked-button class="light-button" (click)="openLink(linkedin)">
+        <mat-icon svgIcon="linkedin"></mat-icon>
+        LinkedIn
+      </button>
+
+      <button mat-stroked-button class="light-button" (click)="openLink(github)">
+        <mat-icon svgIcon="github"></mat-icon>
+        GitHub
+      </button>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; 2025 Eric Oliveira. Desenvolvido com Angular 18+ e Material Design.</p>
+    </div>
+  </div>
+</footer>
