@@ -1,1 +1,28 @@
-<p>projects works!</p>
+<section class="projects-container">
+  <h2>Meus Projetos</h2>
+  
+  <div class="grid-layout">
+    <mat-card class="project-card" *ngFor="let project of projects">
+      <mat-card-header>
+        <mat-card-title>{{ project.title }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>{{ project.description }}</p>
+
+        <mat-chip-set class="tech-chips">
+          <mat-chip *ngFor="let tech of project.technologies">{{ tech }}</mat-chip>
+        </mat-chip-set>
+      </mat-card-content>
+
+      <mat-card-actions allign="end">
+        <a mat-button color="primary" *ngIf="project.repoLink" [href]="project.repoLink" target="_blank">
+          GitHub
+        </a>
+        <a mat-raised-button color="accent" *ngIf="project.deployLink" [href]="project.deployLink" target="_blank">
+          Ver Online
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>

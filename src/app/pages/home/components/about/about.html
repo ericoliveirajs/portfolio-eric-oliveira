@@ -1,1 +1,20 @@
-<p>about works!</p>
+<section class="about-container">
+  <div class="content-wrapper">
+    <h2>Sobre Mim</h2>
+    <p>
+      Sou Engenheiro de Software Full Stack com experiência no desenvolvimento e sustentação de aplicações web de alta performance.
+      Minha especialidade está na stack <strong>Angular e Node.js/Nest.js</strong>, utilizando TypeScript para criar soluções escaláveis.
+    </p>
+    <p>
+      Tenho experiência sólida em ambientes de nuvem <strong>AWS</strong>, deploy de microsserviços e containerização com <strong>Docker</strong>.
+      Meu trabalho é guiado pelos princípios de Clean Code e SOLID, garantindo qualidade através de testes automatizados.
+    </p>
+
+    <div class="skills-section">
+      <h3>Tech Stack</h3>
+      <mat-chip-set aria-label="Habilidades Técnicas">
+        <mat-chip *ngFor="let skill of skills">{{ skill }}</mat-chip>
+      </mat-chip-set>
+    </div>
+  </div>
+</section>
